@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: 'Api test'
+  version: '0.1'
+servers:
+  -
+    url: 'http://api.torch.sn/v1'
+    description: 'Mon api lister'
+paths:
+  /posts:
+    get:
+      operationId: 'App\Controller\PersonneController::index'
+      responses:
+        '200':
+          description: 'L''ensemble des personnes'
+          content:
+            application/json:
+              schema:
+                description: 'Les primiers personnes'
+                type: string

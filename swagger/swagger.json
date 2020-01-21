@@ -1,0 +1,62 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api test",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://api.torch.sn/v1",
+            "description": "Mon api lister"
+        }
+    ],
+    "paths": {
+        "/personne": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "L'ensemble des personnes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Personne"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Personne": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "nom": {
+                        "type": "string",
+                        "length": 255
+                    },
+                    "prenom": {
+                        "type": "string",
+                        "length": 255
+                    },
+                    "adresse": {
+                        "type": "string",
+                        "length": 255
+                    },
+                    "tel": {
+                        "type": "string",
+                        "length": 255
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
